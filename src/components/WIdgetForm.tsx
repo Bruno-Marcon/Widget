@@ -39,7 +39,18 @@ export function WidgetForm(){
         <CloseButton />
       </header>
       <div className="flex py-8 gap-2 w-full"> 
-        
+        { Object.entries(feedbackTypes).map(([key, value]) => {
+          return(
+            <button
+              className=" bg-zinc-800 rounded-lg py-5 w-24 flex-1 flex flex-col items-center"
+
+              type="button"
+            >
+              <img src={value.image.source} alt={value.image.alt} />
+              <span>{value.title}</span>
+            </button>
+          )
+        })}
       </div>
       <footer className="text-xs text-neutral-400">
         Feito com carinho por <a  className="underline underline-offset-2" href="https://github.com/Bruno-Marcon">Bruno Marcon</a>
